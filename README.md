@@ -74,6 +74,12 @@ end
 what this class does is defines a method called task and under that returns or adds a string to the current value so if you wanted to call that function or method you would use.
 
 ```crystal
+class Classname 
+  def task
+    "data" + self
+  end
+end
+
 def Classname.askin
   "Data value two"
 end
@@ -83,7 +89,27 @@ puts Classname.askin
 
 will output 
 
-`data Data value two`
+`Data value two`
+
+The reason this happens is because we are using the class to define a new method not the same method. Also do note that we would need to construct a class named `String` to make this output the way we need to. So for example 
+
+```crystal
+class String
+  def task
+    "data" + self
+  end
+end
+
+puts "more data".task 
+```
+
+this will output 
+
+```
+more data data
+```
+
+because we called the class name with the data type then proceeded to output a string then adding .task the name of our method under that class. Doing this with other data types is a bit hard as for some reason crystal sees String as a class but every other data type as a structure. So if you switch class String to class Int it will call it a struct and error out. 
 
 this makes code time alot more efficient the further you get into the language and gives you the most basic understanding of how methods can be used. Functions and methods also have return types which you can call in two ways. if you want more than one argument you use `{datatype, datatype}` and if you want to return only one data type you use `:`
 
@@ -106,12 +132,19 @@ end
 
 Do you understand how helpful this can actually be? I think this is very neat because of how interesting the type system works with methods and in general. This type of definition will help you in later more advanced code bases with crystal. As you can see the basics of crystal are easy but it does get a bit wackier towards the end but either way still pretty good for a compiled language right?
 
-* Task for this section: Build a basic application that will take the input of two names using a class and mash the first and last name together where the first name is static
+* Task for this section: Build a basic application that will take the input of a single strign using a class and mash the first and last name together where the first name is static. Do not forget that definitions can not start with a capital letter because it then becomes constant.
 
 <details>
 <summary>View Assignment code</summary>
-  fjfjfjfjf
-   <details>
+  ```crystal
+  class String
+    def lastname
+      "bobert " + self
+    end
+  end
+
+  puts "Data".lastname
+  ```
 </details>
 
 
