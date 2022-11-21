@@ -136,6 +136,7 @@ Do you understand how helpful this can actually be? I think this is very neat be
 
 <details>
 <summary>View Assignment code</summary>
+  
   ```crystal
   class String
     def lastname
