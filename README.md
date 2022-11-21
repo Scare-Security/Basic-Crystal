@@ -148,4 +148,42 @@ Do you understand how helpful this can actually be? I think this is very neat be
   ```
 </details>
 
+# Classes and Modules 
+
+Classes are a bit wacky but are fun in crystal. Crystal has an amazing way to define classes and modules. The example below is off a simple module with a class which will output the data parsed inside of the class. Note that every module with a class must have an initializer if you want to run special rendering functions ( we will get more into that in the ECR section )
+
+```crystal
+module Base 
+  class Initializer
+  end
+end
+```
+
+This is a simple module with a nested class named Initializer. So if you wanted to call the module and class you would use 
+
+```crystal
+a = Base::Initializer.new
+```
+
+despite there being no new or init function every module with an inline class must end with `.new`
+
+anytime you want to use a variable that the class will accept as an argument you have to define an `initialize` definition, this is standard. Below is an example of a Module with a nested class that uses the initialize method to make an argument public through the entire class.
+
+```crystal
+module Base
+  class Initializer 
+    def initialize(@data : String | Nil)
+    end
+    def caller
+      puts "#{@data}"
+    end
+  end
+end
+
+a = Base::Initializer.new("value")
+a.caller()
+```
+
+we first define a module named base with a class named Initializer. Under the class is the used initialize function with one argument that is named @data of data type String or Nil this means that the value can be empty without raising any errors. After the initialize function was created the caller method prints out the value of @data. Now that we have the class setup we can call the .new method for the module->class with the argument for the initialize function. Once done we can use the variable a to call the caller function under the Initializer class. `a.caller()` will output `value`
+
 
