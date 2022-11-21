@@ -109,20 +109,9 @@ Do you understand how helpful this can actually be? I think this is very neat be
 * Task for this section: Build a basic application that will take the input of two names using a class and mash the first and last name together where the first name is static
 
 <details>
-<summary>Well</summary>
-
-<details>
-<summary>Try this</summary>
-
- <details>
- <summary>The other one</summary>
-
+<summary>View Assignment code</summary>
+  fjfjfjfjf
    <details>
-   <summary>Ok, try this</summary>
-   You got me 😂
-   </details>
- </details>
-</details>
 </details>
 
 
